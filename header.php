@@ -117,6 +117,9 @@
                   </div> 
                 </div>   
               </p>  
+                <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Moesubs Side Widget") ) : ?>
+                <?php endif;?>
+
             </div>
             <div class="col s12 l8">
               <p>

@@ -74,3 +74,14 @@ function posts_link_attributes_prev()
 {
   return 'class="moesubs red-text tooltipped" data-delay="50" data-position="top" data-tooltip="Lihat sesudahnya"';
 }
+
+if ( function_exists('register_sidebar') )
+  register_sidebar(array(
+    'id'  => 'sidebar-1',
+    'name' => 'Moesubs Side Widget',
+    'before_widget' => '<div class="z-depth-3 moe-background-white moe-widget moesubs">',
+    'after_widget' => '</div>',
+    'before_title' => '<h5>',
+    'after_title' => '</h5>',
+  )
+);

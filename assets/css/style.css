@@ -433,6 +433,13 @@ content: '\E5CC';
   height: 100%;
 }
 
+.moe-widget {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  margin: 0px;
+}
+
 /*
 Media Type
 */
