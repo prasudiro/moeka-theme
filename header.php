@@ -76,7 +76,7 @@
                   $length = mb_strlen($post->post_content);
                   // echo $length;exit();
 
-                  echo "<b>[".date("d F Y", strtotime($post->post_date))."]</b>";
+                  echo "<b>[".get_the_date()."]</b>";
                   echo "&nbsp;&nbsp;";
                   echo get_the_content('');
                   echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
