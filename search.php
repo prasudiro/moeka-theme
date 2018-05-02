@@ -2,9 +2,18 @@
 <!-- Load header.php theme -->
 <?php get_header(); ?>
 
+<?php $query = new wp_query();  ?>
+
 <p class="moe-posts">
 
 <a href="<?php echo esc_urL(home_url('/')); ?>" class="btn red moesubs tooltipped waves-effect waves-light" data-position="bottom" data-tooltip="Hasil Pencarian <?php echo $_GET['s']; ?>"><i class="left material-icons">search</i> <?php echo $_GET['s']; ?></a><br><br>
+
+<?php if(!is_front_page() || !is_home()): ?>
+	<ul class="pagination" style="text-align: center; margin-top: -40px;">
+	  <li><span class="moesubs"><?php next_posts_link('&laquo; Hasil sebelumnya', $query->max_num_pages); ?></span></li>
+	  <li><span class="moesubs"><?php previous_posts_link('Hasil sesudahnya &raquo;', $query->max_num_pages); ?></span></li>
+	</ul>
+<?php endif; ?>
 
 <div class="moe-posts-related">
   <div class="row">
@@ -57,6 +66,13 @@
 
   </div>
 </div>
+
+<?php if(!is_front_page() || !is_home()): ?>
+	<ul class="pagination" style="text-align: center; padding-bottom: 20px;">
+	  <li><span class="moesubs"><?php next_posts_link('&laquo; Hasil sebelumnya', $query->max_num_pages); ?></span></li>
+	  <li><span class="moesubs"><?php previous_posts_link('Hasil sesudahnya &raquo;', $query->max_num_pages); ?></span></li>
+	</ul>
+<?php endif; ?>
 
 </p>
 
