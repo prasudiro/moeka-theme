@@ -67,10 +67,10 @@ add_filter('previous_posts_link_attributes', 'posts_link_attributes_prev');
 
 function posts_link_attributes_next() 
 {
-  return 'class="moesubs red-text tooltipped" data-delay="50" data-position="top" data-tooltip="Lihat rilisan sebelumnya"';
+  return 'class="moesubs red-text tooltipped" data-delay="50" data-position="top" data-tooltip="Lihat sebelumnya"';
 }
 
 function posts_link_attributes_prev() 
 {
-  return 'class="moesubs red-text tooltipped" data-delay="50" data-position="top" data-tooltip="Lihat rilisan sesudahnya"';
+  return 'class="moesubs red-text tooltipped" data-delay="50" data-position="top" data-tooltip="Lihat sesudahnya"';
 }

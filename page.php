@@ -186,13 +186,13 @@ if (have_posts()) :
     </div>
   </div>
   <?php endif; ?>    
-
+<!-- 
   <div class="moe-marginbar">
     Komentar
   </div>                 
   <div class="moe-posts-comments">
     Komentar
-  </div>
+  </div> -->
   </div>
 </p>
 

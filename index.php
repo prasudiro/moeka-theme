@@ -6,7 +6,7 @@
 
   <?php if(is_front_page() || is_home()): ?>
   <ul class="pagination" style="padding-bottom:10px; margin-top:-40px; text-align: center">
-    <li><a href="<?php echo esc_urL(home_url('/')); ?>/rilisan/page/2" class="moesubs red-text tooltipped" data-delay="50" data-position="top" data-tooltip="Lihat rilisan sebelumnya">&laquo; Rilisan sebelumnya</a></li>
+    <li><a href="<?php echo esc_urL(home_url('/')); ?>/rilisan/page/2" class="moesubs red-text tooltipped" data-delay="50" data-position="top" data-tooltip="Lihat sebelumnya">&laquo; Rilisan sebelumnya</a></li>
   </ul>
   <?php endif; ?>
 
@@ -20,7 +20,7 @@
 <?php if(is_front_page() || is_home()): ?>
 <p class="moe-posts">
   <ul class="pagination" style="padding-bottom:10px; margin-top:-40px; text-align: center">
-    <li><a href="<?php echo esc_urL(home_url('/')); ?>/rilisan/page/2" class="moesubs red-text tooltipped" data-delay="50" data-position="top" data-tooltip="Lihat rilisan sebelumnya">&laquo; Rilisan sebelumnya</a></li>
+    <li><a href="<?php echo esc_urL(home_url('/')); ?>/rilisan/page/2" class="moesubs red-text tooltipped" data-delay="50" data-position="top" data-tooltip="Lihat sebelumnya">&laquo; Rilisan sebelumnya</a></li>
   </ul>
 </p>
 <?php endif; ?>

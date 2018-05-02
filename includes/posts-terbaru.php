@@ -35,7 +35,7 @@
         $matches = array_reverse($matches);
 ?>
 
-<a href="<?php echo get_the_permalink(); ?>" class="moe-posts-container collection-item col s12">
+<a href="<?php echo get_the_permalink(); ?>#disqus_thread" class="moe-posts-container collection-item col s12">
   <div class="row">
     <div class="col s3">
       <i class="moe-posts-icons-date material-icons">access_time</i> 
@@ -52,7 +52,9 @@
       </span>
     </div>
     <div class="col s1 right">
-      <i class="moe-posts-icons-comment material-icons">comment</i> <span class="moe-posts-comment">0</span>
+      <i class="moe-posts-icons-comment material-icons">comment</i> <span class="moe-posts-comment">
+      <span class="disqus-comment-count" data-disqus-url="<?php echo get_the_permalink(); ?>"> </span>
+      </span>
     </div>
   </div>
 </a>
