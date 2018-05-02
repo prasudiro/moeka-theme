@@ -79,8 +79,8 @@ if ( function_exists('register_sidebar') )
   register_sidebar(array(
     'id'  => 'sidebar-1',
     'name' => 'Moesubs Side Widget',
-    'before_widget' => '<div class="z-depth-3 moe-background-white moe-widget moesubs">',
-    'after_widget' => '</div>',
+    'before_widget' => '<p><div class="z-depth-3 moe-background-white moe-widget moesubs">',
+    'after_widget' => '</div><p>',
     'before_title' => '<h5>',
     'after_title' => '</h5>',
   )
