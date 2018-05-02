@@ -1,6 +1,8 @@
 <!-- Load header.php theme -->
 <?php get_header(); ?>
 
+<?php include dirname( __FILE__ ) . ('/includes/posts-redirect.php'); ?>
+
 <p class="moe-posts">
   <a href="<?php echo esc_urL(home_url('/')); ?>" class="btn red moesubs tooltipped waves-effect waves-light" data-position="bottom" data-tooltip="Rilisan Terbaru"><i class="left material-icons">format_list_numbered</i> Rilisan Terbaru</a><br><br>
 
