@@ -2,8 +2,8 @@
 
   $paged   = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
   $query = new WP_Query(array('post_type'       => $post_type,
-                                'order'           => $post_type == 'proyek' ? 'name' : 'date',
-                                'orderby'         => 'asc',
+                                'orderby'           => $post_type == 'proyek' ? 'name' : 'date',
+                                'order'         => $post_type == 'proyek' ? 'asc' : 'desc',
                                 'post_status'     => 'publish',
                                 'paged'           => $paged,
                                 ));
