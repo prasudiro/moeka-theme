@@ -5,6 +5,7 @@
   <a href="https://kirino.sexy/" target="_blank" class="moe-main-menu-title collection-item"><i class="moe-main-menu material-icons">file_download</i> Kirino Sexy</a>
   <a href="https://discord.gg/FKzTU32" class="moe-main-menu-title collection-item"><i class="moe-main-menu material-icons">chat</i> Discord</a>
   <a href="http://shizuka.beauty.fm:8000/" class="moe-main-menu-title collection-item"><i class="moe-main-menu material-icons">radio</i> iDOLM@STER Radio</a>
+  <a href="<?php echo esc_url( home_url( '/' ) ); ?>/rilisan/feed" class="moe-main-menu-title collection-item"><i class="moe-main-menu material-icons">rss_feed</i> RSS Rilisan</a>
   <hr>
   <a href="<?php echo home_url('/') ?>kategori/serial-tv" class="moe-main-menu-title collection-item"><i class="moe-main-menu material-icons">live_tv</i> Serial TV</a>
   <a href="<?php echo home_url('/') ?>kualitas/bluray-bd" class="moe-main-menu-title collection-item"><i class="moe-main-menu material-icons">live_tv</i> BluRay/DVD</a>
