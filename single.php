@@ -47,6 +47,18 @@ if (have_posts()) :
       <?php endif; ?>
     <?php endif; ?>
   </div>
+  <div class="moe-single-meta grey-text moesubs">
+    <div class="col s12">
+      <div class="col s12 m6">
+        <i class="moe-posts-icons-date-single material-icons">access_time</i> <?php echo get_the_date(); ?> - <?php echo get_the_time(); ?> WIB
+        &nbsp;&nbsp;&nbsp;
+        <i class="moe-posts-icons-date-single material-icons">person</i> <?php echo get_the_author(); ?>      
+      </div>
+      <div class="col s12 m6">
+        <iframe src="https://www.facebook.com/plugins/like.php?href=<?php echo get_the_permalink(); ?>%2Fdocs%2Fplugins%2F&width=300&layout=standard&action=like&size=small&show_faces=false&share=true&height=35&appId=145593842186986" width="300" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+      </div>
+    </div>    
+  </div>
   <div class="moe-single-title"><a href="<?php echo get_the_permalink(); ?>" class="tooltipped" data-position="top" data-tooltip="<?php echo get_the_title(); ?>">
     <?php if (($post->post_type == 'rilisan') || ($post->post_type == 'proyek')) : ?>
     <i class="moe-posts-icons-title material-icons">live_tv</i> 
@@ -191,7 +203,7 @@ if (have_posts()) :
     Komentar
   </div>                 
   <div class="moe-posts-comments">
-    Komentar
+    <?php comments_template(); ?>
   </div>
   </div>
 </p>

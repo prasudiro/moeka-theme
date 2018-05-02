@@ -23,10 +23,11 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Pranala Berguna</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="https://nyaa.si/user/moesubs">Nyaa Torrent</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://udel.kirino.sexy/">Kirino Torrent</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://discord.gg/FKzTU32">Discord</a></li>
-            <li><a class="grey-text text-lighten-3" href="http://shizuka.makny.us:8000/">THE iDOLM@STER Radio</a></li>
+            <li><a class="grey-text text-lighten-3" target="_blank" href="https://nyaa.si/user/moesubs">Nyaa Torrent</a></li>
+            <li><a class="grey-text text-lighten-3" target="_blank" href="https://udel.kirino.sexy/">Kirino Torrent</a></li>
+            <li><a class="grey-text text-lighten-3" target="_blank" href="https://kirino.sexy/">Kirino Sexy</a></li>
+            <li><a class="grey-text text-lighten-3" target="_blank" href="https://discord.gg/FKzTU32">Discord</a></li>
+            <li><a class="grey-text text-lighten-3" target="_blank" href="http://shizuka.beauty.fm:8000/">THE iDOLM@STER Radio</a></li>
           </ul>
         </div>
       </div>

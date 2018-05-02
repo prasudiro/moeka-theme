@@ -13,7 +13,6 @@ $args = (array(
               ),
           ),
               'order' => 'desc',
-              'posts_per_page'  => 20,
               'paged'           => $paged,
               ) );  
 

@@ -285,6 +285,12 @@ a.moesubs-posts-container:hover {
   font-size: 16px;
 }
 
+.moe-posts-icons-date-single {
+  vertical-align: bottom;
+  line-height: 24px;
+  font-size: 18px;
+}
+
 .moe-search {
   font-family:"Moesubs Sans",sans-serif;
   font-weight: bolder;
@@ -325,6 +331,17 @@ a.moesubs-posts-container:hover {
 .moe-single-title {
   text-align: center;
   padding: 20px;
+}
+
+.moe-single-content {
+  padding: 20px;
+}
+
+.moe-single-meta {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  margin-bottom: 20px;
 }
 
 .moe-posts-container .row {

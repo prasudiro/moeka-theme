@@ -5,7 +5,6 @@
                                 'order'           => $post_type == 'proyek' ? 'name' : 'date',
                                 'orderby'         => 'asc',
                                 'post_status'     => 'publish',
-                                'posts_per_page'  => 50,
                                 'paged'           => $paged,
                                 ));
 ?>

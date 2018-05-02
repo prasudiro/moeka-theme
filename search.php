@@ -4,7 +4,7 @@
 
 <p class="moe-posts">
 
-<a href="<?php echo esc_urL(home_url('/')); ?>" class="btn red moesubs tooltipped waves-effect waves-light" data-position="bottom" data-tooltip="Rilisan Terbaru"><i class="left material-icons">search</i> <?php echo $_GET['s']; ?></a><br><br>
+<a href="<?php echo esc_urL(home_url('/')); ?>" class="btn red moesubs tooltipped waves-effect waves-light" data-position="bottom" data-tooltip="Hasil Pencarian <?php echo $_GET['s']; ?>"><i class="left material-icons">search</i> <?php echo $_GET['s']; ?></a><br><br>
 
 <div class="moe-posts-related">
   <div class="row">
