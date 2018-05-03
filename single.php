@@ -171,7 +171,7 @@ if (have_posts()) :
               $matches = array_reverse($matches);
     ?>
 
-    <div class="col s12 m3">
+    <div class="col s6 l3">
       <a href="<?php echo get_the_permalink(); ?>" class="tooltipped" data-delay="50" data-position="top" data-tooltip="<?php echo $post->post_title; ?>">
         <div class="card small">
           <div class="card-image">

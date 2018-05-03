@@ -65,6 +65,7 @@
           </div>
           <div class="moe-background-white moe-information">
             <div style="line-height:23px;">
+
             <!-- START Get active informasi -->
             <?php 
               $informasi = new WP_Query(array('post_type'       => 'informasi',
@@ -73,9 +74,6 @@
               if ($informasi->have_posts()) :
                 while ($informasi->have_posts()) :
                   $informasi->the_post();
-                  $length = mb_strlen($post->post_content);
-                  // echo $length;exit();
-
                   echo "<b>[".get_the_date()."]</b>";
                   echo "&nbsp;&nbsp;";
                   echo get_the_content('');
@@ -85,6 +83,7 @@
               endif;
             ?>
             <!-- END Get active informasi -->
+
             <hr>
             <b><a href="<?php echo home_url('/'); ?>informasi" class="tooltipped" data-delay="50" data-position="bottom" data-tooltip="Informasi Moesubs">&raquo; Lihat seluruh informasi</a></b>
             </div>
@@ -92,7 +91,7 @@
         </div>
         <div class="col s12">
           <div class="row">
-            <div class="col s4">
+            <div class="col s12 l4 hide-on-med-and-down">
               <p>
                 <div class="z-depth-3 moe-background-white">
                   <div class="moe-menu hide-on-med-and-down">
@@ -117,8 +116,11 @@
                   </div> 
                 </div>   
               </p>  
+
+                <!-- START Include widget sidebar -->
                 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Moesubs Side Widget") ) : ?>
                 <?php endif;?>
+                <!-- END Include widget sidebar -->
 
             </div>
             <div class="col s12 l8">
