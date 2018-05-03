@@ -61,7 +61,7 @@
       </div>
         <div class="col s12 z-depth-3 moe-margin-x2">
           <div class="moe-marginbar">
-          Informasi
+          <i class="material-icons moe-marginbar-icons">info</i> Informasi
           </div>
           <div class="moe-background-white moe-information">
             <div style="line-height:23px;">

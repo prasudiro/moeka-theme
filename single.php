@@ -131,7 +131,7 @@ if (have_posts()) :
 
   <?php if (($post->post_type == 'rilisan') || ($post->post_type == 'proyek')) : ?>
   <div class="moe-marginbar">
-    <?php echo ucfirst($post->post_type); ?> Terkait
+    <i class="material-icons moe-marginbar-icons">new_releases</i> <?php echo ucfirst($post->post_type); ?> Terkait
   </div>  
   <div class="moe-posts-related">
     <div class="row">
@@ -200,7 +200,7 @@ if (have_posts()) :
   <?php endif; ?>    
 
   <div class="moe-marginbar">
-    Komentar
+    <i class="material-icons moe-marginbar-icons">comment</i> Komentar
   </div>                 
   <div class="moe-posts-comments">
     <?php comments_template(); ?>

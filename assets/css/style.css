@@ -375,6 +375,11 @@ a.moesubs-posts-container:hover {
   background: #ba182e;
 }
 
+.moe-marginbar .moe-marginbar-icons {
+  line-height: 32px;  
+  vertical-align: bottom;
+}
+
 .moe-navbar {
   padding: 10px;
   margin-top: -70px;
@@ -452,7 +457,7 @@ content: '\E5CC';
   margin: 0px;
 }
 
-.moe-widget-bar {
+.moe-widgetbar {
   font-family: "Moesubs Sans",sans-serif;
   font-size: 20px;
   color: #eee;
@@ -462,6 +467,11 @@ content: '\E5CC';
   margin-right: -10px;
   margin-bottom: 10px;
   padding: 10px;
+}
+
+.moe-widgetbar .moe-widgetbar-icons {
+  line-height: 32px;  
+  vertical-align: bottom;
 }
 
 /*
