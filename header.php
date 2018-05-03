@@ -59,12 +59,13 @@
 
       <!-- GET randomized banner -->
       <?php 
+        $banner_list  = array();
         $get_banner   = get_option('moesubs_banner', FALSE);
-        $banner_list  = json_decode($get_banner);
+        $banner_list  = json_decode($get_banner, TRUE);
 
         foreach ($banner_list as $key => $value) 
         {
-          if ($value->status == 0) 
+          if ($value['status'] == 0) 
           {
            unset($banner_list[$key]);
           }
@@ -73,7 +74,7 @@
         shuffle($banner_list);
       ?>
       <?php if (count($banner_list) > 0) : ?>
-        <img src="<?php echo wp_get_attachment_url($banner_list[0]->post_id); ?>" class="tooltipped" data-delay="50" data-position="top" data-tooltip="[Moesubs] Jagonya Ngesub">
+        <img src="<?php echo wp_get_attachment_url($banner_list[0]['post_id']); ?>" class="tooltipped" data-delay="50" data-position="top" data-tooltip="[Moesubs] Jagonya Ngesub">
       <?php else : ?>
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/banner-moesubs-moeka.jpg" class="tooltipped" data-delay="50" data-position="top" data-tooltip="[Moesubs] Jagonya Ngesub">
       <?php endif; ?>
