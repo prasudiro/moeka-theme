@@ -37,7 +37,13 @@ function theme_scripts()
 	wp_enqueue_script('materialize', get_template_directory_uri().'/assets/js/materialize.min.js', array(), '', false );
 	wp_enqueue_script('moesubs', get_template_directory_uri().'/assets/js/moesubs.js', array ( 'jquery' ), '', false);
 }
-add_action( 'wp_enqueue_scripts', 'theme_scripts');
+add_action('wp_enqueue_scripts', 'theme_scripts');
+
+function load_admin_style() 
+{
+  wp_enqueue_style('admin_css', get_template_directory_uri().'/assets/css/admin.style.css');
+}
+add_action('admin_enqueue_scripts', 'load_admin_style');
 
 register_nav_menus(array(
 	'menu_atas'	  => 'Menu Atas',
@@ -86,3 +92,14 @@ if ( function_exists('register_sidebar') )
 
   )
 );
+
+function register_peraba_moeka_page() 
+{
+    add_menu_page('Peraba Moeka', 'Peraba Moeka', 'add_users', 'peraba-moeka', '_custom_menu_page', null, 9); 
+}
+add_action('admin_menu', 'register_peraba_moeka_page');
+
+function _custom_menu_page()
+{
+   include dirname( __FILE__ ) . ('/includes/moeka-home.php');
+}
