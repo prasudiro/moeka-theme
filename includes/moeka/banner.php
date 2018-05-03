@@ -14,7 +14,6 @@
 
 <h2>Daftar Banner:</h2>
 
-<input type="submit" value="Simpan">
 <table class="wp-list-table widefat fixed striped posts">
 	<thead>
 		<tr>
