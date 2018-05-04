@@ -145,20 +145,6 @@ body {
 	background:#eee;
 }
 
-body::before {
-  content: "moeka_minakami";
-  opacity: 0.5;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-  display: block;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(../img/moesubs-moeka-bg.jpg);
-  background-position: center center;
-}
-
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: searchfield-cancel-button;
 }

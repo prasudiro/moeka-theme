@@ -71,6 +71,8 @@
 	<li class="current"><a href="<?php echo admin_url(); ?>admin.php?page=peraba-moeka&#038;tab=gambar-latar">Gambar Latar</a></li>
 </ul>
 
+<?php include dirname( __FILE__ ) . ('/moeka/bg.php') ?>
+
 <?php elseif (isset($_GET['tab']) && $_GET['tab'] == 'media-upload') : 
 
 if (!isset($_SERVER['HTTP_REFERER'])) 
@@ -257,6 +259,36 @@ $save_mobile  = update_option('moesubs_menu_mobile', $menu_mobile, '', 'yes');
 
 echo "<h2>Sukses mengubah data Menu Paten!</h2>";
 echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=menu-paten')."'>&laquo; Kembali</a>";
+
+?>
+
+<?php elseif (isset($_GET['tab']) && $_GET['tab'] == 'bg-upload') : 
+
+if (!isset($_SERVER['HTTP_REFERER'])) 
+{
+	echo "<h2>Gagal! Asal tidak jelas!</h2>";
+	echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=gambar-latar')."'>&laquo; Kembali</a>";
+	die();
+}
+
+require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+require_once(ABSPATH . "wp-admin" . '/includes/file.php');
+require_once(ABSPATH . "wp-admin" . '/includes/media.php');
+
+	$attachment_id 		= media_handle_upload('file-upload', 0);
+
+	$save_option     	= update_option('moesubs_bg', $attachment_id, '', 'yes');
+
+	if ($save_option) 
+	{
+		echo "<h2>Sukses mengganti Gambar Latar!</h2>";
+		echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=gambar-latar')."'>&laquo; Kembali</a>";
+	}
+	else
+	{
+		echo "<h2>Gagal! Silakan periksa lagi!</h2>";
+		echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=gambar-latar')."'>&laquo; Kembali</a>";
+	}
 
 ?>
 

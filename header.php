@@ -4,8 +4,10 @@
   <!-- Favicon -->
   <link href="https://puu.sh/wbdmk.png" rel="shorcut icon" type="image/icon" />
 
-  <!--Let browser know website is optimized for mobile-->
+  <!-- Let browser know website is optimized for mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Check for frontpage to determine custom meta -->
   <?php if(is_front_page() || is_home()): ?>
     <meta name="keywords" content="anime, fansub, moesubs, moe, sub indo, subtitle indonesia">
     <meta property="og:keywords" content="anime, fansub, moesubs, moe, sub indo, subtitle indonesia">
@@ -26,13 +28,35 @@
     }?>
   </title>
 
+<!-- Get and use background image data -->
+<?php
+$moesubs_bg_id  = get_option('moesubs_bg', FALSE);
+$moesubs_bg     = wp_get_attachment_url($moesubs_bg_id);
+?>
+
+<style type="text/css">
+body::before {
+  content: "";
+  opacity: 0.5;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(<?php echo $moesubs_bg_id != "" ? $moesubs_bg : "./wp-content/themes/moeka-theme/assets/img/moesubs-moeka-bg.jpg"; ?>);
+  background-position: center center;
+}
+</style>
+
 <!-- Load WP Admin Head -->
 <?php wp_head(); ?>
 
 </head>
-
 <body>
 
+<!-- Loader GIF -->
 <div id="preloader">
   <div id="status">&nbsp;
   </div>
@@ -41,6 +65,7 @@
     </div>
 </div>
 
+  <!-- Moesubs Logo: DO NOT CHANGE IT!!! -->
   <nav>
     <div class="nav-wrapper">
       <a href="<?php echo home_url('/'); ?>" class="brand-logo center">
@@ -49,11 +74,13 @@
       <a href="#" data-target="moe-mobile-view" class="sidenav-trigger"><i class="material-icons">menu</i></a>
   </nav>
   
-  <!-- START Include mobile menu -->
+  <!-- Include mobile menu -->
   <?php include dirname( __FILE__ ) . ('/includes/menu-mobile.php'); ?>
-  <!-- END Include mobile menu -->
 
+  <!-- Call custom container -->
   <div class="moe-container">
+
+    <!-- Banner section -->
     <div class="col s12 center moe-banner">
       <a href="<?php echo home_url('/'); ?>">
 
@@ -78,9 +105,11 @@
       <?php else : ?>
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/banner-moesubs-moeka.jpg" class="tooltipped" data-delay="50" data-position="top" data-tooltip="[Moesubs] Jagonya Ngesub">
       <?php endif; ?>
-
       </a>
-      </div>
+    </div>
+    <!-- END of Banner section -->
+
+        <!-- START OF Informasi section -->
         <div class="col s12 z-depth-3 moe-margin-x2">
           <div class="moe-marginbar">
           <i class="material-icons moe-marginbar-icons">info</i> Informasi
@@ -111,8 +140,13 @@
             </div>
           </div>
         </div>
+        <!-- END OF Informasi section -->
+
+        <!-- Call content -->
         <div class="col s12">
           <div class="row">
+
+            <!-- Sidebar section -->
             <div class="col s12 l4 hide-on-med-and-down">
               <p>
                 <div class="z-depth-3 moe-background-white">
@@ -130,9 +164,9 @@
                         </div>
                       </div>
 
-                      <!-- START Include mobile menu -->
-                      <?php include dirname( __FILE__ ) . ('/includes/menu-desktop.php'); ?>
-                      <!-- END Include mobile menu -->
+                        <!-- START Include mobile menu -->
+                        <?php include dirname( __FILE__ ) . ('/includes/menu-desktop.php'); ?>
+                        <!-- END Include mobile menu -->
 
                     </ul>
                   </div> 
@@ -145,6 +179,8 @@
                 <!-- END Include widget sidebar -->
 
             </div>
+            <!-- END of Sidebar section -->
+
             <div class="col s12 l8">
               <p>
                 <div class="z-depth-3 moe-background-white">
@@ -152,9 +188,9 @@
                     <nav>
                       <div class="nav-wrapper">
 
-                      <!-- START Add menu utama -->
-                      <?php wp_nav_menu(array('theme_location' => 'menu_utama', 'items_wrap' => wrap_menu_utama())); ?>
-                      <!-- END Add menu utama -->
+                        <!-- START Add menu utama -->
+                        <?php wp_nav_menu(array('theme_location' => 'menu_utama', 'items_wrap' => wrap_menu_utama())); ?>
+                        <!-- END Add menu utama -->
 
                       </div>
                     </nav>
