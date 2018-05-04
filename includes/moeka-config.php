@@ -56,6 +56,8 @@
 	<li class="tab-item"><a href="<?php echo admin_url(); ?>admin.php?page=peraba-moeka&#038;tab=gambar-latar">Gambar Latar</a></li>
 </ul>
 
+<?php include dirname( __FILE__ ) . ('/moeka/menu.php') ?>
+
 <?php elseif (isset($_GET['tab']) && $_GET['tab'] == 'gambar-latar') : ?>
 
 <h2>Gambar Latar Moeka Theme</h2>
@@ -235,6 +237,26 @@ $save_alamat   = update_option('moesubs_address', $_POST['moesubs_address'], '',
 
 echo "<h2>Sukses mengubah data Hubungi Kami!</h2>";
 echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=hubungi-kami')."'>&laquo; Kembali</a>";
+
+?>
+
+<?php elseif (isset($_GET['tab']) && $_GET['tab'] == 'menu-save') : 
+
+if (!isset($_SERVER['HTTP_REFERER'])) 
+{
+	echo "<h2>Gagal! Asal tidak jelas!</h2>";
+	echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=pranala-berguna')."'>&laquo; Kembali</a>";
+	die();
+}
+
+$menu_desktop = base64_encode($_POST['menu-desktop']);
+$menu_mobile  = base64_encode($_POST['menu-mobile']);
+
+$save_desktop = update_option('moesubs_menu_desktop', $menu_desktop, '', 'yes');
+$save_mobile  = update_option('moesubs_menu_mobile', $menu_mobile, '', 'yes');
+
+echo "<h2>Sukses mengubah data Menu Paten!</h2>";
+echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=menu-paten')."'>&laquo; Kembali</a>";
 
 ?>
 
