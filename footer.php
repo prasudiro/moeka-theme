@@ -31,7 +31,6 @@
 
               if (count($pranala_list) > 0) 
               {
-                sort($pranala_list);
                 foreach ($pranala_list as $key => $value) 
                 {
                   echo"<li><a class='grey-text text-lighten-3' target='_blank' href='".$value['url']."'>".$value['name']."</a></li>";
