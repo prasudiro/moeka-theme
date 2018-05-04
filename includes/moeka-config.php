@@ -26,6 +26,8 @@
 	<li class="tab-item"><a href="<?php echo admin_url(); ?>admin.php?page=peraba-moeka&#038;tab=gambar-latar">Gambar Latar</a></li>
 </ul>
 
+<?php include dirname( __FILE__ ) . ('/moeka/hubungi.php') ?>
+
 <?php elseif (isset($_GET['tab']) && $_GET['tab'] == 'pranala-berguna') : ?>
 
 <h2>Pranala Berguna Moeka Theme</h2>
@@ -208,6 +210,31 @@ else
 	echo "<h2>Gagal! Silakan periksa lagi!</h2>";
 	echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=pranala-berguna')."'>&laquo; Kembali</a>";
 }
+
+?>
+
+<?php elseif (isset($_GET['tab']) && $_GET['tab'] == 'hubungi-save') : 
+
+if (!isset($_SERVER['HTTP_REFERER'])) 
+{
+	echo "<h2>Gagal! Asal tidak jelas!</h2>";
+	echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=hubungi-kami')."'>&laquo; Kembali</a>";
+	die();
+}
+
+if (empty($_SERVER)) 
+{
+	echo "<h2>Gagal! Silakan periksa lagi!</h2>";
+	echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=hubungi-kami')."'>&laquo; Kembali</a>";
+	die();
+}
+
+$save_email    = update_option('moesubs_email', $_POST['moesubs_email'], '', 'yes');
+$save_telepon  = update_option('moesubs_phone', $_POST['moesubs_phone'], '', 'yes');
+$save_alamat   = update_option('moesubs_address', $_POST['moesubs_address'], '', 'yes');
+
+echo "<h2>Sukses mengubah data Hubungi Kami!</h2>";
+echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=hubungi-kami')."'>&laquo; Kembali</a>";
 
 ?>
 

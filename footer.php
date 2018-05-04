@@ -12,11 +12,17 @@
           <h5 class="white-text">Hubungi Kami</h5>
           <p class="grey-text text-lighten-4">
             <ul>
-              <li><i class="material-icons moe-posts-icons-title">email</i> <a href="mailto:gmail@moesubs.com" class="tooltipped grey-text text-lighten-4" data-delay="50" data-position="top" data-tooltip="Email to Moesubs">gmail@moesubs.com</a></li>
-              <li><i class="material-icons moe-posts-icons-title">phone</i> (62) 021 80180169</li>
-              <li><i class="material-icons moe-posts-icons-title">store</i> Menara Saidah 25F, Jl. Letjen M.T. Haryono No.30<br>
-              RT 003/001, Cikoko, Pancoran, Jakarta Selatan<br>
-              DKI Jakarta, 13630</li>
+
+            <?php 
+              $email    = get_option('moesubs_email', FALSE);
+              $telepon  = get_option('moesubs_phone', FALSE);
+              $alamat   = get_option('moesubs_address', FALSE);
+            ?>
+
+              <li><i class="material-icons moe-posts-icons-title">email</i> 
+              <a href="<?php echo isset($email) ? $email : "email@name.com" ?>" class="tooltipped grey-text text-lighten-4" data-delay="50" data-position="top" data-tooltip="Email to Moesubs"><?php echo isset($email) ? $email : "email@name.com" ?></a></li>
+              <li><i class="material-icons moe-posts-icons-title">phone</i> <?php echo isset($telepon) ? $telepon : "000000000" ?></li>
+              <li style="width: 75%"><i class="material-icons moe-posts-icons-title">store</i> <?php echo isset($alamat) ? $alamat : "Jalan Kaki No. 1" ?></li>
             </ul>  
           </p>
         </div>
