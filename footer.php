@@ -23,11 +23,23 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Pranala Berguna</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" target="_blank" href="https://nyaa.si/user/moesubs">Nyaa Torrent</a></li>
-            <li><a class="grey-text text-lighten-3" target="_blank" href="https://udel.kirino.sexy/">Kirino Torrent</a></li>
-            <li><a class="grey-text text-lighten-3" target="_blank" href="https://kirino.sexy/">Kirino Sexy</a></li>
-            <li><a class="grey-text text-lighten-3" target="_blank" href="https://discord.gg/FKzTU32">Discord</a></li>
-            <li><a class="grey-text text-lighten-3" target="_blank" href="http://shizuka.beauty.fm:8000/">THE iDOLM@STER Radio</a></li>
+
+           <?php 
+              $pranala_list   = array();
+              $get_pranala    = get_option('moesubs_pranala_berguna', FALSE);
+              $pranala_list   = json_decode($get_pranala, TRUE);
+
+              if (count($pranala_list) > 0) 
+              {
+                sort($pranala_list);
+                foreach ($pranala_list as $key => $value) 
+                {
+                  echo"<li><a class='grey-text text-lighten-3' target='_blank' href='".$value['url']."'>".$value['name']."</a></li>";
+                }
+              }
+
+            ?>
+
           </ul>
         </div>
       </div>

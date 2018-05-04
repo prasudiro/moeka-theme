@@ -39,6 +39,8 @@
 	<li class="tab-item"><a href="<?php echo admin_url(); ?>admin.php?page=peraba-moeka&#038;tab=gambar-latar">Gambar Latar</a></li>
 </ul>
 
+<?php include dirname( __FILE__ ) . ('/moeka/pranala.php') ?>
+
 <?php elseif (isset($_GET['tab']) && $_GET['tab'] == 'menu-paten') : ?>
 
 <h2>Menu Paten Moeka Theme</h2>
@@ -151,6 +153,60 @@ else
 {
 	echo "<h2>Gagal! Silakan periksa lagi!</h2>";
 	echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=banner')."'>&laquo; Kembali</a>";
+}
+
+?>
+
+<?php elseif (isset($_GET['tab']) && $_GET['tab'] == 'pranala-save') : 
+
+if (!isset($_SERVER['HTTP_REFERER'])) 
+{
+	echo "<h2>Gagal! Asal tidak jelas!</h2>";
+	echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=pranala-berguna')."'>&laquo; Kembali</a>";
+	die();
+}
+
+$get_pranala 	= get_option('moesubs_pranala_berguna', FALSE);
+$pranala_list = json_decode($get_pranala, TRUE);
+
+if (isset($_POST['hapus']))
+{
+	foreach ($pranala_list as $key => $value) 
+	{		
+		if ($value['name'] == $_POST['name']) 
+		{
+			unset($pranala_list[$key]);
+			$save_detail		  = json_encode($pranala_list);
+			$save_option     	= update_option('moesubs_pranala_berguna', $save_detail, '', 'yes');
+			if ($save_option) 
+			{
+				echo "<h2>Sukses menghapus Pranala!</h2>";
+				echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=pranala-berguna')."'>&laquo; Kembali</a>";
+			}
+			else
+			{
+				echo "<h2>Gagal! Silakan periksa lagi!</h2>";
+				echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=pranala-berguna')."'>&laquo; Kembali</a>";
+			}
+			die();
+		}
+	}
+}
+
+$pranala_list[] = array('name' => $_POST['name'], 'url' => $_POST['url']);
+
+$save_detail		  = json_encode($pranala_list);
+$save_option     	= update_option('moesubs_pranala_berguna', $save_detail, '', 'yes');
+
+if ($save_option) 
+{
+	echo "<h2>Sukses menambah Pranala!</h2>";
+	echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=pranala-berguna')."'>&laquo; Kembali</a>";
+}
+else
+{
+	echo "<h2>Gagal! Silakan periksa lagi!</h2>";
+	echo "<a href='".admin_url('/admin.php?page=peraba-moeka&tab=pranala-berguna')."'>&laquo; Kembali</a>";
 }
 
 ?>
