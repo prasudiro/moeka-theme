@@ -156,17 +156,17 @@
 	line-height: 26px;
 }
 @media screen and (max-width: 782px) {
-.tab-menu li {
-	float: none;
-}
-.moeka-module-desc li {
-	float: none;
-	width: auto;
-	margin-right: 0;
-}
-.moeka-informations {
-	width: 100%;
-}
+	.tab-menu li {
+		float: none;
+	}
+	.moeka-module-desc li {
+		float: none;
+		width: auto;
+		margin-right: 0;
+	}
+	.moeka-informations {
+		width: 100%;
+	}
 }
 
 /**
@@ -180,3 +180,4 @@ CUSTOM CSS
 .center {
 	text-align: center !important;
 }
+

@@ -1,6 +1,8 @@
 <!-- Load header.php theme -->
 <?php get_header(); ?>
 
+<?php include dirname( __FILE__ ) . ('/includes/manual.php'); ?>
+
 <?php include dirname( __FILE__ ) . ('/includes/posts-redirect.php'); ?>
 
 <p class="moe-posts">

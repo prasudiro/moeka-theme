@@ -5,7 +5,7 @@ $args = (array(
               'post_type' => 'rilisan',
               'tax_query' => array(
               array(                     
-                  'taxonomy' => $uri_segments[1],
+                  'taxonomy' => $term->taxonomy,
                   'field' => 'slug',
                   'terms' => $getterm,
                   'include_children' => true,          
