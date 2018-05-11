@@ -145,7 +145,7 @@ if (have_posts()) :
       }
       else
       {
-        $slug = isset($related[1]->slug);
+        $slug = $related[1]->slug;
       }
         $terkait = new WP_Query(array('tax_query' =>  array(
                                         array(
