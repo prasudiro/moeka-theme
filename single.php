@@ -139,7 +139,7 @@ if (have_posts()) :
     <!-- START GET related posts -->
     <?php $related = get_the_terms($post->ID, 'kategori');
       $slug = "";
-      if (isset($related[0]->parent) != 0)
+      if (isset($related[0]->parent) && $related[0]->parent != 0)
       {
         $slug = $related[0]->slug;
       }
