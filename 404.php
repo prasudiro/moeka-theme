@@ -8,7 +8,7 @@
 	</div>
 	<div class="moe-single-title">
 	<h3 class="moesubs">Intinya ini adalah laman 404! <br>Jadi, silakan pergi dari sini!!!</h3>
-	<img src="https://pbs.twimg.com/media/CmaIHtLXEAAoPvZ.jpg" class="moe-img">
+	<img src="https://neng.kirino.sexy/BUkeU.jpg" class="moe-img">
 	</div>
 </p>
 
