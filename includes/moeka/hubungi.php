@@ -15,19 +15,19 @@ $alamat 	= get_option('moesubs_address', FALSE);
 		<tr>
 			<th>Email</th>
 			<td>
-				<input type="text" name="moesubs_email" size="100" placeholder="Isi Email" value="<?php echo isset($email) ? $email : "" ?>" required>
+				<input class="form-control" type="text" name="moesubs_email" size="100" placeholder="Isi Email" value="<?php echo isset($email) ? $email : "" ?>" required>
 			</td>
 		</tr>
 		<tr>
 			<th>No. Telepon</th>
 			<td>
-				<input type="text" name="moesubs_phone" size="100" placeholder="Isi Nomor Telepon" value="<?php echo isset($telepon) ? $telepon : "" ?>" required>
+				<input class="form-control" type="text" name="moesubs_phone" size="100" placeholder="Isi Nomor Telepon" value="<?php echo isset($telepon) ? $telepon : "" ?>" required>
 			</td>
 		</tr>
 		<tr>
 			<th>Alamat</th>
 			<td>
-			<textarea name="moesubs_address" placeholder="Isi Alamat" rows="3" cols="100" required><?php echo isset($alamat) ? $alamat : "" ?></textarea>
+			<textarea class="form-control" name="moesubs_address" placeholder="Isi Alamat" rows="3" cols="100" required><?php echo isset($alamat) ? $alamat : "" ?></textarea>
 			</td>
 		</tr>
 		<tr>

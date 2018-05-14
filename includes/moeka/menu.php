@@ -25,7 +25,7 @@ $menu_mobile      = base64_decode($get_menu_mobile);
 		<tr>
 		</tr>
 			<td>
-				<textarea rows="10" cols="150" name="menu-desktop" placeholder="Isi HTML Menu Desktop di sini" required><?php echo isset($menu_desktop) ? str_replace("\'", "'", str_replace('\"', '"', htmlspecialchars_decode($menu_desktop))) : ""; ?></textarea>
+				<textarea class="form-control" rows="10" cols="150" name="menu-desktop" placeholder="Isi HTML Menu Desktop di sini" required><?php echo isset($menu_desktop) ? str_replace("\'", "'", str_replace('\"', '"', htmlspecialchars_decode($menu_desktop))) : ""; ?></textarea>
 			</td>
 		</tr>
 		</tr>
@@ -43,7 +43,7 @@ $menu_mobile      = base64_decode($get_menu_mobile);
 		<tr>
 		</tr>
 			<td>
-				<textarea rows="10" cols="150" name="menu-mobile" placeholder="Isi HTML Menu Mobile di sini" required><?php echo isset($menu_mobile) ? str_replace("\'", "'", str_replace('\"', '"', htmlspecialchars_decode($menu_mobile))) : ""; ?></textarea>
+				<textarea class="form-control" rows="10" cols="150" name="menu-mobile" placeholder="Isi HTML Menu Mobile di sini" required><?php echo isset($menu_mobile) ? str_replace("\'", "'", str_replace('\"', '"', htmlspecialchars_decode($menu_mobile))) : ""; ?></textarea>
 			</td>
 		</tr>
 		</tr>

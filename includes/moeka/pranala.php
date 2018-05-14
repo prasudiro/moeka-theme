@@ -7,13 +7,13 @@
 			<tr>
 				<th>Judul</th>
 				<td>
-					<input type="text" name="name" size="100" placeholder="Isi Judul Tautan" required>
+					<input class="form-control" type="text" name="name" size="100" placeholder="Isi Judul Tautan" required>
 				</td>
 			</tr>
 			<tr>
 				<th>Permalink</th>
 				<td>
-					<input type="text" name="url" size="100" placeholder="Isi Permalink" required>
+					<input class="form-control" type="text" name="url" size="100" placeholder="Isi Permalink" required>
 				</td>
 			</tr>
 			<tr>
