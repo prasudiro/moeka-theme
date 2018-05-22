@@ -46,6 +46,7 @@ function load_admin_style()
   wp_enqueue_style('summernote_css', get_template_directory_uri().'/assets/css/summernote.css');
   wp_enqueue_style('summernote-bs3', get_template_directory_uri().'/assets/css/summernote-bs3.css');
   wp_enqueue_script('jquery-min', get_template_directory_uri().'/assets/js/jquery.min.js', array ('jquery'), '', false);
+  wp_enqueue_script('mediaelement', get_template_directory_uri('mediaelement.min.js', __FILE__), array('jquery'), '4.8.2', true);
   wp_enqueue_script('bootstrap', get_template_directory_uri().'/assets/js/bootstrap.min.js', array(), '', false );
   wp_enqueue_script('chosen_js', get_template_directory_uri().'/assets/js/chosen.jquery.js', array ( 'jquery' ), '', false);
   wp_enqueue_script('summernote_js', get_template_directory_uri().'/assets/js/summernote.min.js', array ( 'jquery' ), '', false);
@@ -102,7 +103,7 @@ if ( function_exists('register_sidebar') )
 
 function register_peraba_moeka_page() 
 {
-    add_menu_page('Peraba Moeka', 'Peraba Moeka', 'add_users', 'peraba-moeka', '_custom_peraba_moeka_page', null, 9); 
+    add_menu_page('Peraba Moeka', 'Peraba Moeka', 'edit_posts', 'peraba-moeka', '_custom_peraba_moeka_page', null, 9); 
 }
 add_action('admin_menu', 'register_peraba_moeka_page');
 
@@ -114,4 +115,11 @@ function _custom_peraba_moeka_page()
 function _custom_internal_page()
 {
   include dirname( __FILE__ ) . ('/includes/internal/dasbor.php');
+}
+
+add_action('wp_enqueue_scripts', 'my_register_javascript', 100);
+
+function my_register_javascript() {
+  wp_register_script('mediaelement', get_template_directory_uri('mediaelement.min.js', __FILE__), array('jquery'), '4.8.2', true);
+  wp_enqueue_script('mediaelement');
 }

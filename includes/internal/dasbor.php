@@ -58,12 +58,31 @@
 		</div>
 	</li>
 </ul>
+
+<?php 
+//Check if table exist
+global $wpdb;
+		$table_name = $wpdb->prefix."internal_admin";
+		$wpdb->get_var('SELECT * FROM '.$table_name);
+		if($wpdb->last_error !== '')
+		{
+			echo "<h1 style='color:red'>ERROR!!! DATABASE BELUM DIBUAT!!!</h1>";
+		}
+
+?>
+
 <h3>Informasi</h3>
 <ul class="moeka-informations">
 	<li>
 		<span class="pub-date">14/05/2018</span>
 		<a href="https://internal.moesubs.com/" target="_blank">
 			Untuk sementara harap tetap menggunakan website Internal Moesubs<br>(Jangan lupa tambahkan /login untuk masuk ke dalamnya).
+		</a>
+	</li>
+	<li>
+		<span class="pub-date">14/05/2018</span>
+		<a href="<?php echo admin_url(); ?>plugins.php">
+			(PENTING!!!)<br>Apabila Database belum dibuat, silakan nonaktifkan dan aktifkan kembali plugin Moesubs Posts.
 		</a>
 	</li>
 </ul>
