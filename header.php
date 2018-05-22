@@ -57,13 +57,13 @@ body::before {
 <body>
 
 <!-- Loader GIF -->
-<div id="preloader">
+<!-- <div id="preloader">
   <div id="status">&nbsp;
   </div>
     <div id="moe-loading">
       Harap Menunggu ....
     </div>
-</div>
+</div> -->
 
   <!-- Moesubs Logo: DO NOT CHANGE IT!!! -->
   <nav>

@@ -59,7 +59,7 @@ if (have_posts()) :
       <?php the_post_thumbnail('large', array('class' => 'img-responsive moe-img')); ?>
       <hr>
     <?php endif; ?>
-    <?php echo get_the_content(); ?>
+    <?php echo wpautop(get_the_content(), TRUE); ?>
     </div>
     <?php if (($post->post_type == 'rilisan') || ($post->post_type == 'proyek')) : ?>
       <hr>
