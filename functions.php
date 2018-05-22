@@ -45,7 +45,10 @@ function load_admin_style()
   wp_enqueue_style('chosen_css', get_template_directory_uri().'/assets/css/chosen.css');
   wp_enqueue_style('summernote_css', get_template_directory_uri().'/assets/css/summernote.css');
   wp_enqueue_style('summernote-bs3', get_template_directory_uri().'/assets/css/summernote-bs3.css');
-  wp_enqueue_script('jquery-min', get_template_directory_uri().'/assets/js/jquery.min.js', array ('jquery'), '', false);
+  if (isset($_GET['page'])) 
+  {
+    wp_enqueue_script('jquery-min', get_template_directory_uri().'/assets/js/jquery.min.js', array ('jquery'), '', false);
+  }
   wp_enqueue_script('mediaelement', get_template_directory_uri('mediaelement.min.js', __FILE__), array('jquery'), '4.8.2', true);
   wp_enqueue_script('bootstrap', get_template_directory_uri().'/assets/js/bootstrap.min.js', array(), '', false );
   wp_enqueue_script('chosen_js', get_template_directory_uri().'/assets/js/chosen.jquery.js', array ( 'jquery' ), '', false);
