@@ -126,3 +126,12 @@ function my_register_javascript() {
   wp_register_script('mediaelement', get_template_directory_uri('mediaelement.min.js', __FILE__), array('jquery'), '4.8.2', true);
   wp_enqueue_script('mediaelement');
 }
+
+function mosubs_remove_version_scripts_styles($src) {
+  if (strpos($src, 'ver=')) {
+    $src = remove_query_arg('ver', $src);
+  }
+  return $src;
+}
+add_filter('style_loader_src', 'mosubs_remove_version_scripts_styles', 9999);
+add_filter('script_loader_src', 'mosubs_remove_version_scripts_styles', 9999);
